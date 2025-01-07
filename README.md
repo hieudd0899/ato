@@ -19,7 +19,7 @@ bun install
 Run the development server:
 
 ```bash
-bun  dev # run both client and admin site
+bun dev # run both client and admin site
 bun client:dev # only client site
 bun admin:dev # only admin site
 ```
@@ -45,7 +45,7 @@ bun admin:dev # only admin site
 # Other rules
 
 - TypeScript typing should be use whenever possible, minimize the use of "any" type
-- Pages should contain minimal amount of logic, referably only be composite of others components.
+- Pages should contain minimum amount of logic, preferably only be composite of others components.
 - File and folder naming rules:
 - React component files and folders: kebab-case
 - Folder: kebab-case
@@ -67,7 +67,6 @@ bun admin:dev # only admin site
 - ┃ ┃ ┃ ┃ ┣ 📂<page1> <--- components (and their associated .module.css file), used only in page1 on the admin site
 - ┃ ┃ ┃ ┃ ┣ 📂<page2>
 - ┃ ┃ ┃ ┃ ┗ 📂common <--- components (and their associated .module.css file), used in multiple pages on the admin site
-- ┃ ┃ ┃ ┣ 📂hooks
 - ┃ ┃ ┃ ┣ 📂hooks <--- React hooks
 - ┃ ┃ ┃ ┣ 📂types <--- type files
 - ┃ ┃ ┃ ┗ 📂utils <--- files containing typescript type definition

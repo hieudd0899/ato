@@ -45,6 +45,5 @@
         "@tanstack/react-query": "^5.62.2",
         "autoprefixer": "^10.4.20",
         "sonner": "^1.7.0"
-    },
-    "module": "index.ts"
+    }
 }
