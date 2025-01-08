@@ -1,5 +1,3 @@
-import React from 'react';
-
 export const Test = () => {
-    return <div>Test</div>;
+    return <div className="text-rose-500">Test</div>;
 };

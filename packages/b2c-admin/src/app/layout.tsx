@@ -1,4 +1,5 @@
 import { Toaster } from 'sonner';
+import { Provider } from 'common/provider';
 
 import './globals.css';
 
@@ -8,11 +9,13 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en">
-            <body>
-                {children}
-                <Toaster />
-            </body>
-        </html>
+        <Provider>
+            <html lang="en">
+                <body>
+                    {children}
+                    <Toaster />
+                </body>
+            </html>
+        </Provider>
     );
 }

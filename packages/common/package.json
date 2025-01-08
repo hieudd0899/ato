@@ -5,7 +5,8 @@
         "lint": "eslint ."
     },
     "devDependencies": {
-        "@types/bun": "latest"
+        "@types/bun": "latest",
+        "tailwindcss": "^3.4.17"
     },
     "peerDependencies": {
         "typescript": "^5.0.0"
