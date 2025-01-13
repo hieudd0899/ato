@@ -24,6 +24,15 @@ bun client:dev # only client site
 bun admin:dev # only admin site
 ```
 
+Run the production server with pm2:
+
+```bash
+bun run build # build both client and admin site
+pm2 start "bun run start" --name ato # start both client and admin site with pm2
+pm2 start "bun run admin:start" --name ato-admin # start admin site with pm2
+pm2 start "bun run client:start" --name ato-client # start client site with pm2
+```
+
 - The b2c-client site should be running on http://localhost:3000.
 - The b2c-admin site should be running on http://localhost:3001
 
