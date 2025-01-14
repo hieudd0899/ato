@@ -21,6 +21,8 @@
         "@next/eslint-plugin-next": "^15.0.3",
         "@types/bun": "latest",
         "@types/eslint": "^9.6.1",
+        "@types/lodash": "^4.17.14",
+        "@types/qs": "^6.9.17",
         "@typescript-eslint/eslint-plugin": "^8.17.0",
         "@typescript-eslint/parser": "^8.17.0",
         "eslint": "^8.57.0",
@@ -52,8 +54,11 @@
         "autoprefixer": "^10.4.20",
         "axios": "^1.7.9",
         "clsx": "^2.1.1",
+        "dayjs": "^1.11.13",
+        "lodash": "^4.17.21",
         "lucide-react": "^0.469.0",
         "postcss-antd-fixes": "^0.2.0",
+        "qs": "^6.13.1",
         "sonner": "^1.7.0",
         "tailwind-merge": "^2.6.0"
     }

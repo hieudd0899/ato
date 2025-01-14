@@ -17,6 +17,8 @@ import {
     Tabs,
 } from 'antd';
 
+import { FilterContainer } from '~/components/common/filter-container';
+
 const Home = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -48,8 +50,44 @@ const Home = () => {
                 <p>Some contents...</p>
                 <p>Some contents...</p>
             </Modal>
+
+            <div className="container rounded-md border p-4">
+                <FilterContainer
+                    items={[
+                        {
+                            name: 'testText',
+                            label: 'Text',
+                            type: 'text',
+                        },
+                        {
+                            name: 'testSelect',
+                            label: 'Select',
+                            type: 'select',
+                            options: [
+                                { value: 'option 1', label: 'option 1' },
+                                { value: 'option 2', label: 'option 2' },
+                                { value: 'option 3', label: 'option 3' },
+                            ],
+                            showSearch: true,
+                        },
+
+                        {
+                            name: 'testRangePicker',
+                            label: 'Range Picker',
+                            type: 'range-picker',
+                            className: 'w-full',
+                        },
+                        {
+                            name: 'testDatePicker',
+                            label: 'Date Picker',
+                            type: 'date-picker',
+                            className: 'w-full',
+                        },
+                    ]}
+                />
+            </div>
             <div className="container flex flex-col space-y-2">
-                <Rate allowHalf value={4} />
+                <Rate allowHalf defaultValue={4} />
                 <Select options={[]} />
                 <DatePicker />
                 <Checkbox>Test</Checkbox>
