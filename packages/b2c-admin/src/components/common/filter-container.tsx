@@ -64,7 +64,7 @@ export const FilterContainer: React.FC<Props> = ({ items, layout }) => {
 
     const router = useRouter();
     const pathname = usePathname();
-    const { queryString, pushQueryString } = useQueryString();
+    const { params, pushParams } = useQueryString();
 
     const onFinish: FormProps<Record<string, string>>['onFinish'] = (
         values
@@ -89,7 +89,7 @@ export const FilterContainer: React.FC<Props> = ({ items, layout }) => {
         }) as Array<Record<string, string | string[]>>;
 
         router.replace(
-            pushQueryString({
+            pushParams({
                 url: pathname,
                 query: queryObject.reduce((acc, curr) => ({ ...acc, ...curr })),
             })
@@ -99,7 +99,7 @@ export const FilterContainer: React.FC<Props> = ({ items, layout }) => {
     return (
         <Form
             form={form}
-            initialValues={queryString()}
+            initialValues={params()}
             layout={layout}
             onFinish={onFinish}
         >

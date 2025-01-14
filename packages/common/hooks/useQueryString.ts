@@ -14,7 +14,7 @@ const dateFormatPattern = /^\d{4}-\d{2}-\d{2}$/;
 export const useQueryString = () => {
     const searchParams = useSearchParams();
 
-    const queryString = React.useCallback(() => {
+    const params = React.useCallback(() => {
         const queryObject = Object.entries(
             qs.parse(
                 Object.fromEntries(new URLSearchParams(searchParams.toString()))
@@ -51,7 +51,7 @@ export const useQueryString = () => {
         return result;
     }, [searchParams]);
 
-    const pushQueryString = React.useCallback(
+    const pushParams = React.useCallback(
         ({ url, query }: Params) => {
             const parsedQuery = qs.stringify({
                 ...lodash.pickBy({
@@ -62,12 +62,12 @@ export const useQueryString = () => {
                 }),
             });
 
-            const params = `${url}?${parsedQuery}`;
+            const paramsUrl = `${url}?${parsedQuery}`;
 
-            return params;
+            return paramsUrl;
         },
         [searchParams]
     );
 
-    return { queryString, pushQueryString };
+    return { params, pushParams };
 };
