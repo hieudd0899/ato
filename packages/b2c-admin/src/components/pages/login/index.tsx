@@ -20,7 +20,6 @@ export const Login = () => {
                 <h1 className="text-primary pb-6 text-center text-3xl font-bold">
                     ATO Admin Panel
                 </h1>
-
                 <div className="min-w-80">
                     <Form
                         disabled={isPending}

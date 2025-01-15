@@ -4,12 +4,15 @@ import { ReloadOutlined } from '@ant-design/icons';
 import {
     Button,
     Col,
+    ColProps,
     DatePicker,
+    DatePickerProps,
     Form,
     FormProps,
     Input,
     Row,
     Select,
+    SelectProps,
 } from 'antd';
 import { Rule } from 'antd/lib/form';
 import { FormLayout } from 'antd/lib/form/Form';
@@ -17,6 +20,8 @@ import { usePathname, useRouter } from 'next/navigation';
 import React from 'react';
 import { useQueryString } from 'common/hooks/useQueryString';
 import dayjs from 'dayjs';
+import { mapArrayUseIndex } from 'common/utils/mapArrayUseIndex';
+import { RangePickerProps } from 'antd/lib/date-picker';
 
 type FilterItemBase = {
     name: string;
@@ -24,29 +29,27 @@ type FilterItemBase = {
     placeholder?: string;
     rules?: Rule[];
     className?: string;
-    colSpan?: number;
+    col?: Pick<ColProps, 'span' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'>;
 };
 
 type TextField = FilterItemBase & {
     type: 'text';
 };
 
-type SelectField = FilterItemBase & {
-    type: 'select';
-    options: { value: string | number; label: React.ReactNode }[];
-    showSearch?: boolean;
-};
+type SelectField = FilterItemBase &
+    Pick<SelectProps, 'options' | 'showSearch'> & {
+        type: 'select';
+    };
 
-type DatePickerField = FilterItemBase & {
-    type: 'date-picker';
-    picker?: 'week' | 'month' | 'quarter' | 'year';
-};
+type DatePickerField = FilterItemBase &
+    Pick<DatePickerProps, 'showTime' | 'picker'> & {
+        type: 'date-picker';
+    };
 
-type RangePickerField = FilterItemBase & {
-    type: 'range-picker';
-    picker?: 'week' | 'month' | 'quarter' | 'year';
-    showTime?: boolean;
-};
+type RangePickerField = Omit<FilterItemBase, 'placeholder'> &
+    Pick<RangePickerProps, 'showTime' | 'placeholder' | 'picker'> & {
+        type: 'range-picker';
+    };
 
 export type Field =
     | TextField
@@ -64,34 +67,36 @@ export const FilterContainer: React.FC<Props> = ({ items, layout }) => {
 
     const router = useRouter();
     const pathname = usePathname();
-    const { params, pushParams } = useQueryString();
+    const { params, pushParams, replaceParams } = useQueryString();
 
     const onFinish: FormProps<Record<string, string>>['onFinish'] = (
         values
     ) => {
-        const queryObject = Object.entries(values)?.map((item) => {
-            if (Array.isArray(item?.[1])) {
-                return {
-                    [item[0]]: item?.[1]?.map((itemValue) => {
-                        if (dayjs.isDayjs(itemValue)) {
-                            return dayjs(itemValue).format('YYYY-MM-DD');
-                        }
-                        return item.values;
-                    }),
-                };
-            }
-            if (dayjs.isDayjs(item?.[1])) {
-                return {
-                    [item?.[0]]: dayjs(item?.[1]).format('YYYY-MM-DD'),
-                };
-            }
-            return { [item?.[0]]: item?.[1] };
-        }) as Array<Record<string, string | string[]>>;
+        const queryObject = (
+            Object.entries(values)?.map((item) => {
+                if (Array.isArray(item?.[1])) {
+                    return {
+                        [item[0]]: item?.[1]?.map((itemValue) => {
+                            if (dayjs.isDayjs(itemValue)) {
+                                return dayjs(itemValue).toISOString();
+                            }
+                            return item.values;
+                        }),
+                    };
+                }
+                if (dayjs.isDayjs(item?.[1])) {
+                    return {
+                        [item?.[0]]: dayjs(item?.[1]).toISOString(),
+                    };
+                }
+                return { [item?.[0]]: item?.[1] };
+            }) as Array<Record<string, string | string[]>>
+        ).reduce((acc, curr) => ({ ...acc, ...curr }));
 
         router.replace(
             pushParams({
                 url: pathname,
-                query: queryObject.reduce((acc, curr) => ({ ...acc, ...curr })),
+                query: queryObject,
             })
         );
     };
@@ -99,20 +104,17 @@ export const FilterContainer: React.FC<Props> = ({ items, layout }) => {
     return (
         <Form
             form={form}
-            initialValues={params()}
+            initialValues={params}
             layout={layout}
             onFinish={onFinish}
         >
             <Row gutter={16}>
-                {items?.map((field) => {
+                {mapArrayUseIndex(items, ({ key, value: field }) => {
+                    const colProps = field?.col ?? {};
                     return (
-                        <Col
-                            className="gutter-row"
-                            key={field?.name}
-                            span={field?.colSpan ?? 6}
-                        >
+                        <Col className="gutter-row" key={key} {...colProps}>
                             <Form.Item
-                                label={field?.label ?? field.name}
+                                label={field?.label}
                                 name={field?.name}
                                 rules={field?.rules}
                             >
@@ -146,6 +148,10 @@ export const FilterContainer: React.FC<Props> = ({ items, layout }) => {
                                                 <DatePicker
                                                     className={field?.className}
                                                     picker={field?.picker}
+                                                    placeholder={
+                                                        field?.placeholder
+                                                    }
+                                                    showTime={field?.showTime}
                                                 />
                                             );
                                         case 'range-picker':
@@ -153,6 +159,9 @@ export const FilterContainer: React.FC<Props> = ({ items, layout }) => {
                                                 <DatePicker.RangePicker
                                                     className={field?.className}
                                                     picker={field?.picker}
+                                                    placeholder={
+                                                        field?.placeholder
+                                                    }
                                                     showTime={field?.showTime}
                                                 />
                                             );
@@ -169,7 +178,19 @@ export const FilterContainer: React.FC<Props> = ({ items, layout }) => {
                 <Button
                     icon={<ReloadOutlined />}
                     onClick={() => {
-                        router.replace(pathname);
+                        if (params?.pageSize && params?.current) {
+                            router.replace(
+                                replaceParams({
+                                    url: pathname,
+                                    query: {
+                                        current: 1,
+                                        pageSize: params?.pageSize,
+                                    },
+                                })
+                            );
+                        } else {
+                            router.replace(pathname);
+                        }
                         setTimeout(() => form.resetFields(), 50);
                     }}
                     type="text"

@@ -6,15 +6,15 @@ import dayjs from 'dayjs';
 
 interface Params {
     url: string;
-    query: Record<string, string | string[]>;
+    query: Record<string, string | string[] | number | number[] | undefined>;
 }
 
-const dateFormatPattern = /^\d{4}-\d{2}-\d{2}$/;
+const DATE_FORMAT_PATTERN = /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.\d{3}Z/;
 
 export const useQueryString = () => {
     const searchParams = useSearchParams();
 
-    const params = React.useCallback(() => {
+    const params = React.useMemo(() => {
         const queryObject = Object.entries(
             qs.parse(
                 Object.fromEntries(new URLSearchParams(searchParams.toString()))
@@ -23,16 +23,16 @@ export const useQueryString = () => {
             if (Array.isArray(item?.[1])) {
                 return {
                     [item?.[0]]: item?.[1]?.map((value) => {
-                        if (dateFormatPattern.test(value)) {
-                            return dayjs(value, 'YYYY-MM-DD');
+                        if (DATE_FORMAT_PATTERN.test(value)) {
+                            return dayjs(value);
                         }
                         return value;
                     }),
                 };
             }
-            if (dateFormatPattern.test(item?.[1] as string)) {
+            if (DATE_FORMAT_PATTERN.test(item?.[1] as string)) {
                 return {
-                    [item?.[0]]: dayjs(item?.[1] as string, 'YYYY-MM-DD'),
+                    [item?.[0]]: dayjs(item?.[1] as string),
                 };
             }
             return {
@@ -55,9 +55,7 @@ export const useQueryString = () => {
         ({ url, query }: Params) => {
             const parsedQuery = qs.stringify({
                 ...lodash.pickBy({
-                    ...Object.fromEntries(
-                        new URLSearchParams(searchParams.toString())
-                    ),
+                    ...params,
                     ...query,
                 }),
             });
@@ -66,8 +64,20 @@ export const useQueryString = () => {
 
             return paramsUrl;
         },
-        [searchParams]
+        [params]
     );
 
-    return { params, pushParams };
+    const replaceParams = React.useCallback(({ url, query }: Params) => {
+        const parsedQuery = qs.stringify({
+            ...lodash.pickBy({
+                ...query,
+            }),
+        });
+
+        const paramsUrl = `${url}?${parsedQuery}`;
+
+        return paramsUrl;
+    }, []);
+
+    return { params, pushParams, replaceParams };
 };

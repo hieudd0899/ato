@@ -5,6 +5,7 @@ import React from 'react';
 import { LoadingOutlined } from '@ant-design/icons';
 import vi from 'antd/locale/vi_VN';
 import { PRIMARY_COLOR } from '../constants/colors';
+import 'dayjs/locale/vi';
 
 export const AntdConfigProvider: React.FC<React.PropsWithChildren> = ({
     children,
