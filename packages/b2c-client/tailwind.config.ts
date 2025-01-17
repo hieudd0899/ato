@@ -1,3 +1,4 @@
+import { PRIMARY_COLOR } from 'common/constants/colors';
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
@@ -8,7 +9,14 @@ const config: Config = {
         '../common/components/**/*.{js,ts,jsx,tsx,mdx}',
     ],
     theme: {
-        extend: {},
+        extend: {
+            container: {
+                center: true,
+            },
+            colors: {
+                primary: PRIMARY_COLOR,
+            },
+        },
     },
     plugins: [],
 };

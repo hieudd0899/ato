@@ -28,6 +28,10 @@ export const AntdConfigProvider: React.FC<React.PropsWithChildren> = ({
                 indicator: <LoadingOutlined style={{ fontSize: 24 }} />,
             }}
             theme={{
+                token: {
+                    fontFamily: 'Nunito Sans, sans-serif',
+                    colorText: '#475569',
+                },
                 components: {
                     Button: {
                         colorPrimary: PRIMARY_COLOR,

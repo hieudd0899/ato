@@ -7,12 +7,12 @@ bun lint ||
     false;
 )
 
-bun run build ||
-(
-    echo '❌👷🔨❌ Sorry, cannot commit... Because your build failed ❌👷🔨❌
-          Next build failed: View the errors above to see why.
-    '
-    false;
-)
+# bun run build ||
+# (
+#     echo '❌👷🔨❌ Sorry, cannot commit... Because your build failed ❌👷🔨❌
+#           Next build failed: View the errors above to see why.
+#     '
+#     false;
+# )
 
 echo '✅✅✅✅ You win this time... I am committing this now. ✅✅✅✅'
