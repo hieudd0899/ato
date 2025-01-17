@@ -1,20 +1,14 @@
 import { Toaster } from 'sonner';
 import { Provider } from 'common/provider';
-
-import './globals.css';
 import { Metadata } from 'next';
-import { Open_Sans } from 'next/font/google';
+import { PRIMARY_FONT } from 'common/utils/font';
+import './globals.css';
 
 export const metadata: Metadata = {
     title: 'ATO',
     description:
         'Nền tảng du lịch nông nghiệp kết hợp giới thiệu sản phẩm OCOP địa phương.',
 };
-
-const openSans = Open_Sans({
-    subsets: ['latin'],
-    weight: ['400', '500', '600', '700'],
-});
 
 export default function RootLayout({
     children,
@@ -24,7 +18,7 @@ export default function RootLayout({
     return (
         <Provider>
             <html lang="en">
-                <body className={openSans.className}>
+                <body className={PRIMARY_FONT.className}>
                     {children}
                     <Toaster />
                 </body>

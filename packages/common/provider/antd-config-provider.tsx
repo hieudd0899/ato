@@ -6,6 +6,7 @@ import { LoadingOutlined } from '@ant-design/icons';
 import vi from 'antd/locale/vi_VN';
 import { PRIMARY_COLOR } from '../constants/colors';
 import 'dayjs/locale/vi';
+import { PRIMARY_FONT } from '../utils/font';
 
 export const AntdConfigProvider: React.FC<React.PropsWithChildren> = ({
     children,
@@ -29,7 +30,7 @@ export const AntdConfigProvider: React.FC<React.PropsWithChildren> = ({
             }}
             theme={{
                 token: {
-                    fontFamily: 'Nunito Sans, sans-serif',
+                    fontFamily: PRIMARY_FONT.style.fontFamily,
                     colorText: '#475569',
                 },
                 components: {
