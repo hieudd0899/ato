@@ -2,9 +2,9 @@
     "name": "ato",
     "type": "module",
     "scripts": {
-        "dev": "bun run --filter b2c-* dev",
-        "start": "bun run --filter b2c-* start",
-        "build": "bun run --filter b2c-* build",
+        "dev": "bun run --filter 'b2c-*' dev",
+        "start": "bun run --filter 'b2c-*' start",
+        "build": "bun run --filter 'b2c-*' build",
         "client:dev": "bun run --cwd packages/b2c-client dev",
         "client:build": "bun run --cwd packages/b2c-client build",
         "client:start": "bun run --cwd packages/b2c-client start",
