@@ -4,7 +4,7 @@ import React from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
-export const RichTextEditor = () => {
+const RichTextEditor = () => {
     const [value, setValue] = React.useState<string>('');
 
     const reactQuillRef = React.useRef<ReactQuill>(null);
@@ -80,8 +80,13 @@ export const RichTextEditor = () => {
             onChange={setValue}
             placeholder="Start writing..."
             ref={reactQuillRef}
+            style={{
+                height: 600,
+            }}
             theme="snow"
             value={value}
         />
     );
 };
+
+export default RichTextEditor;
