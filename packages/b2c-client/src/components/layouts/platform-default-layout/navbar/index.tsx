@@ -7,7 +7,7 @@ import { UserAuth } from './user-auth';
 
 export const Navbar = () => {
     return (
-        <nav className="fixed w-full shadow">
+        <nav className="fixed z-50 w-full bg-white shadow">
             <div className="container flex h-20 items-center space-x-8">
                 <Logo />
                 <Menu />

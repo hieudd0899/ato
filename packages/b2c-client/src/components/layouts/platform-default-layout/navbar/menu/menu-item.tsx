@@ -18,14 +18,18 @@ export const MenuItem: React.FC<Props> = ({ data }) => {
     const pathname = usePathname();
 
     const isActive = useMemo(() => {
-        if (pathname === '/' && pathname === data.href) {
+        if (pathname === '/' && data.href === '/' && pathname === data.href) {
             return true;
         }
-        if (pathname.startsWith(data.href)) {
+        if (
+            pathname !== '/' &&
+            data.href !== '/' &&
+            pathname.startsWith(data.href)
+        ) {
             return true;
         }
         return false;
-    }, [pathname]);
+    }, [pathname, data]);
 
     return (
         <Link

@@ -16,6 +16,7 @@ import {
     Tabs,
 } from 'antd';
 
+import { RichTextEditor } from 'common/components/rich-text-editor';
 import { FilterContainer } from '~/components/common/filter-container';
 import { Table } from '~/components/common/table';
 
@@ -129,6 +130,7 @@ const Home = () => {
                             },
                         ]}
                     />
+                    <RichTextEditor />
                 </div>
             </div>
         </Suspense>
