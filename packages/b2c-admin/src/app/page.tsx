@@ -130,7 +130,13 @@ const Home = () => {
                             },
                         ]}
                     />
-                    <RichTextEditor />
+                    <RichTextEditor
+                        onChange={(value) => {
+                            // eslint-disable-next-line no-console
+                            console.log(value);
+                        }}
+                        value=""
+                    />
                 </div>
             </div>
         </Suspense>
