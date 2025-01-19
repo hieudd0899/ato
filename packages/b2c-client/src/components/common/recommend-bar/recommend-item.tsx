@@ -32,10 +32,10 @@ export const RecommendItem: React.FC<Props> = ({ data }) => {
                     width={600}
                 />
                 <div className="col-span-2 space-y-1">
-                    <h2 className="text-primary text-lg font-semibold">
+                    <h2 className="text-primary text-lg font-bold">
                         {data?.title}
                     </h2>
-                    <div className="flex gap-x-4 text-sm">
+                    <div className="flex gap-x-4 text-sm font-semibold">
                         <p className="flex gap-x-1">
                             <Building2 className="h-4 w-4" />
                             <span>{data?.company}</span>
