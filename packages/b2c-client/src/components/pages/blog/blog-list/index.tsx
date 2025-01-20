@@ -10,36 +10,36 @@ export const BlogList = () => {
             <List
                 dataSource={[
                     {
-                        title: 1,
+                        id: 1,
                     },
                     {
-                        title: 1,
+                        id: 2,
                     },
                     {
-                        title: 1,
+                        id: 3,
                     },
                     {
-                        title: 1,
+                        id: 4,
                     },
                     {
-                        title: 1,
+                        id: 5,
                     },
                     {
-                        title: 1,
+                        id: 6,
                     },
                 ]}
                 grid={{
                     gutter: 16,
                     xs: 1,
                     sm: 2,
-                    md: 4,
-                    lg: 4,
+                    md: 2,
+                    lg: 2,
                     xl: 4,
                     xxl: 4,
                 }}
-                renderItem={() => (
+                renderItem={(item) => (
                     <List.Item>
-                        <BlogItem />
+                        <BlogItem id={item.id} />
                     </List.Item>
                 )}
             />

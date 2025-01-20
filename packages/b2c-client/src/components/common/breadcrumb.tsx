@@ -14,7 +14,10 @@ type Props = {
 export const Breadcrumb: React.FC<Props> = ({ items }) => {
     const breadcrumbItems = useMemo(() => {
         return items?.map((item, index) => {
-            if (items?.length > 0 && index === items.length - 1) {
+            if (
+                (items?.length > 0 && index === items.length - 1) ||
+                !item?.href
+            ) {
                 return {
                     title: <span className="text-primary">{item.title}</span>,
                 };

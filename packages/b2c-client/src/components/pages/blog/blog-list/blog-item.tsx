@@ -7,9 +7,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
-export const BlogItem = () => {
+type Props = {
+    id: number;
+};
+
+export const BlogItem: React.FC<Props> = ({ id }) => {
     return (
-        <Link href="/">
+        <Link href={`/blog/${id}`}>
             <div
                 className={cn(
                     'rounded-md border text-slate-600 transition-all',
