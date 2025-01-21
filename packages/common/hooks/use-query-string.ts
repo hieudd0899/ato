@@ -11,7 +11,7 @@ interface Params {
 
 const DATE_FORMAT_PATTERN = /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.\d{3}Z/;
 
-export const useQueryString = () => {
+export const useQueryString = <T = Record<string, string | string[]>>() => {
     const searchParams = useSearchParams();
 
     const params = React.useMemo(() => {
@@ -48,7 +48,7 @@ export const useQueryString = () => {
                   }))
                 : {};
 
-        return result;
+        return result as T;
     }, [searchParams]);
 
     const pushParams = React.useCallback(
