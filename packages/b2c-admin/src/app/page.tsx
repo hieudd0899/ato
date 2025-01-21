@@ -17,11 +17,14 @@ import {
 } from 'antd';
 
 import { RichTextEditor } from 'common/components/rich-text-editor';
+import { RichTextContent } from 'common/components/rich-text-content';
+
 import { FilterContainer } from '~/components/common/filter-container';
 import { Table } from '~/components/common/table';
 
 const Home = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [richtextValue, setRichtextValue] = useState<string>();
 
     const showModal = () => {
         setIsModalOpen(true);
@@ -34,6 +37,7 @@ const Home = () => {
     const handleCancel = () => {
         setIsModalOpen(false);
     };
+
     return (
         <Suspense fallback={<div>Loading...</div>}>
             <div>
@@ -132,11 +136,11 @@ const Home = () => {
                     />
                     <RichTextEditor
                         onChange={(value) => {
-                            // eslint-disable-next-line no-console
-                            console.log(value);
+                            setRichtextValue(value);
                         }}
                         value=""
                     />
+                    <RichTextContent data={richtextValue ?? ''} />
                 </div>
             </div>
         </Suspense>

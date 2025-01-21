@@ -65,14 +65,7 @@ const RichTextEditor: React.FC<Props> = ({ value, onChange }) => {
             modules={{
                 toolbar: {
                     container: [
-                        [
-                            { header: '1' },
-                            { header: '2' },
-                            { header: '3' },
-                            { header: '4' },
-                            { font: [] },
-                        ],
-                        [{ size: [] }],
+                        [{ header: '1' }, { header: '2' }],
                         ['bold', 'italic', 'underline', 'strike', 'blockquote'],
                         [
                             { list: 'ordered' },
@@ -81,8 +74,6 @@ const RichTextEditor: React.FC<Props> = ({ value, onChange }) => {
                             { indent: '+1' },
                         ],
                         ['link', 'image', 'video'],
-                        ['code-block'],
-                        ['clean'],
                     ],
                     handlers: {
                         image: imageHandler,
@@ -97,6 +88,7 @@ const RichTextEditor: React.FC<Props> = ({ value, onChange }) => {
             ref={reactQuillRef}
             style={{
                 height: 600,
+                paddingBottom: 40,
             }}
             theme="snow"
             value={currentValue}
