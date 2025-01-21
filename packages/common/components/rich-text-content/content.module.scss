@@ -1,0 +1,9 @@
+.wrapper {
+    @apply text-justify;
+
+    :global {
+        img {
+            @apply w-full;
+        }
+    }
+}

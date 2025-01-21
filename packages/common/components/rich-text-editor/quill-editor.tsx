@@ -1,6 +1,6 @@
 'use client';
 
-import React, { Suspense } from 'react';
+import React from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
@@ -44,71 +44,63 @@ const RichTextEditor: React.FC<Props> = ({ value, onChange }) => {
     }, []);
 
     return (
-        <Suspense fallback={<div>Loading...</div>}>
-            <ReactQuill
-                formats={[
-                    'header',
-                    'font',
-                    'size',
-                    'bold',
-                    'italic',
-                    'underline',
-                    'strike',
-                    'blockquote',
-                    'list',
-                    'bullet',
-                    'indent',
-                    'link',
-                    'image',
-                    'video',
-                    'code-block',
-                ]}
-                modules={{
-                    toolbar: {
-                        container: [
-                            [
-                                { header: '1' },
-                                { header: '2' },
-                                { header: '3' },
-                                { header: '4' },
-                                { font: [] },
-                            ],
-                            [{ size: [] }],
-                            [
-                                'bold',
-                                'italic',
-                                'underline',
-                                'strike',
-                                'blockquote',
-                            ],
-                            [
-                                { list: 'ordered' },
-                                { list: 'bullet' },
-                                { indent: '-1' },
-                                { indent: '+1' },
-                            ],
-                            ['link', 'image', 'video'],
-                            ['code-block'],
-                            ['clean'],
+        <ReactQuill
+            formats={[
+                'header',
+                'font',
+                'size',
+                'bold',
+                'italic',
+                'underline',
+                'strike',
+                'blockquote',
+                'list',
+                'bullet',
+                'indent',
+                'link',
+                'image',
+                'video',
+                'code-block',
+            ]}
+            modules={{
+                toolbar: {
+                    container: [
+                        [
+                            { header: '1' },
+                            { header: '2' },
+                            { header: '3' },
+                            { header: '4' },
+                            { font: [] },
                         ],
-                        handlers: {
-                            image: imageHandler,
-                        },
+                        [{ size: [] }],
+                        ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+                        [
+                            { list: 'ordered' },
+                            { list: 'bullet' },
+                            { indent: '-1' },
+                            { indent: '+1' },
+                        ],
+                        ['link', 'image', 'video'],
+                        ['code-block'],
+                        ['clean'],
+                    ],
+                    handlers: {
+                        image: imageHandler,
                     },
-                    clipboard: {
-                        matchVisual: false,
-                    },
-                }}
-                onChange={setCurrentValue}
-                placeholder="Start writing..."
-                ref={reactQuillRef}
-                style={{
-                    height: 600,
-                }}
-                theme="snow"
-                value={currentValue}
-            />
-        </Suspense>
+                },
+                clipboard: {
+                    matchVisual: false,
+                },
+            }}
+            onChange={setCurrentValue}
+            placeholder="Start writing..."
+            ref={reactQuillRef}
+            style={{
+                height: 600,
+            }}
+            theme="snow"
+            value={currentValue}
+        />
     );
 };
 

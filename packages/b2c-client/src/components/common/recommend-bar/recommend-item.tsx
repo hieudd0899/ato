@@ -26,16 +26,16 @@ export const RecommendItem: React.FC<Props> = ({ data }) => {
             <div className="grid grid-cols-3 space-x-4">
                 <Image
                     alt={data?.title ?? 'ato'}
-                    className="h-[130px] w-full rounded-md object-cover"
+                    className="h-[120px] w-full rounded-md object-cover"
                     height={600}
                     src={data?.image ?? ''}
                     width={600}
                 />
                 <div className="col-span-2 space-y-1">
-                    <h2 className="text-primary text-lg font-bold">
+                    <h2 className="text-primary text-lg font-medium">
                         {data?.title}
                     </h2>
-                    <div className="flex gap-x-4 text-sm font-semibold">
+                    <div className="flex gap-x-4 text-sm font-medium">
                         <p className="flex gap-x-1">
                             <Building2 className="h-4 w-4" />
                             <span>{data?.company}</span>
@@ -47,7 +47,7 @@ export const RecommendItem: React.FC<Props> = ({ data }) => {
                             </span>
                         </p>
                     </div>
-                    <p className="line-clamp-3">{data?.briefInfo}</p>
+                    <p className="line-clamp-3 text-sm">{data?.briefInfo}</p>
                 </div>
             </div>
         </Link>

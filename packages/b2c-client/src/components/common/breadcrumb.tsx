@@ -28,5 +28,5 @@ export const Breadcrumb: React.FC<Props> = ({ items }) => {
         });
     }, [items]);
 
-    return <AntBreadcrumb items={breadcrumbItems} />;
+    return <AntBreadcrumb className="font-medium" items={breadcrumbItems} />;
 };

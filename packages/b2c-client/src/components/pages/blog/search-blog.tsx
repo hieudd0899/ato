@@ -5,7 +5,7 @@ import { Search } from 'lucide-react';
 import { usePathname, useRouter } from 'next/navigation';
 import React, { useEffect } from 'react';
 import { useDebounceValue } from 'common/hooks/use-debounce-value';
-import { useQueryString } from 'common/hooks/useQueryString';
+import { useQueryString } from 'common/hooks/use-query-string';
 
 interface ISearchForm {
     search?: string;

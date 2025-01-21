@@ -18,7 +18,7 @@ import { Rule } from 'antd/lib/form';
 import { FormLayout } from 'antd/lib/form/Form';
 import { usePathname, useRouter } from 'next/navigation';
 import React from 'react';
-import { useQueryString } from 'common/hooks/useQueryString';
+import { useQueryString } from 'common/hooks/use-query-string';
 import dayjs from 'dayjs';
 import { mapArrayUseIndex } from 'common/utils/mapArrayUseIndex';
 import { RangePickerProps } from 'antd/lib/date-picker';

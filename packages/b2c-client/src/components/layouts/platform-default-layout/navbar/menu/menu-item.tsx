@@ -34,7 +34,7 @@ export const MenuItem: React.FC<Props> = ({ data }) => {
     return (
         <Link
             className={cn(
-                'font-semibold transition-colors',
+                'font-medium transition-colors',
                 'hover:text-primary',
                 isActive && 'text-primary'
             )}

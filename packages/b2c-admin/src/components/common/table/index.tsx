@@ -4,7 +4,7 @@ import React from 'react';
 import { Table as AntTable } from 'antd';
 import type { PaginationProps, TableProps } from 'antd';
 import { AnyObject } from 'antd/es/_util/type';
-import { useQueryString } from 'common/hooks/useQueryString';
+import { useQueryString } from 'common/hooks/use-query-string';
 import { usePathname, useRouter } from 'next/navigation';
 import { Sorts } from 'common/types/common';
 import lodash from 'lodash';
