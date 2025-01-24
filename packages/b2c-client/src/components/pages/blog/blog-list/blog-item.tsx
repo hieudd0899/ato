@@ -17,7 +17,7 @@ export const BlogItem: React.FC<Props> = ({ id }) => {
             <div
                 className={cn(
                     'rounded-md border text-slate-600 transition-all',
-                    'hover:border-none hover:shadow-md'
+                    'hover:-translate-y-2 hover:translate-x-1.5 hover:border-transparent hover:shadow-lg'
                 )}
             >
                 <Image

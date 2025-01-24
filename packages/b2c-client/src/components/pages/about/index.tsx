@@ -71,8 +71,8 @@ export const About = () => {
                     ]}
                 />
                 <div>
-                    <div className="grid grid-cols-3 space-x-12 py-4">
-                        <div className="col-span-2">
+                    <div className="grid grid-cols-1 space-y-10 py-4 xl:grid-cols-3 xl:space-x-12 xl:space-y-0">
+                        <div className="xl:col-span-2">
                             <Content content={RICHTEXT_DATA} />
                         </div>
                         <div>

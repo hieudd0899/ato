@@ -35,17 +35,20 @@ export const SearchBlog = () => {
 
     return (
         <Form form={form}>
-            <div className="flex justify-between">
-                <Form.Item<ISearchForm> name="search">
+            <div className="flex flex-col justify-between xl:flex-row">
+                <Form.Item<ISearchForm>
+                    className="w-full xl:w-[450px]"
+                    name="search"
+                >
                     <Input
                         placeholder="Nhập nội dung tìm kiếm..."
-                        style={{
-                            width: 450,
-                        }}
                         suffix={<Search className="h-4 w-4 text-slate-400" />}
                     />
                 </Form.Item>
-                <Form.Item<ISearchForm> name="category">
+                <Form.Item<ISearchForm>
+                    className="w-full xl:w-[300px]"
+                    name="category"
+                >
                     <Select
                         allowClear
                         options={[
@@ -67,9 +70,6 @@ export const SearchBlog = () => {
                             },
                         ]}
                         placeholder="Loại tin tức"
-                        style={{
-                            width: 300,
-                        }}
                     />
                 </Form.Item>
             </div>

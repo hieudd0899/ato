@@ -1,7 +1,9 @@
 'use client';
 
+import dynamic from 'next/dynamic';
 import React from 'react';
-import { Navbar } from './navbar';
+
+const Navbar = dynamic(() => import('./navbar'), { ssr: false });
 
 type Props = React.PropsWithChildren;
 

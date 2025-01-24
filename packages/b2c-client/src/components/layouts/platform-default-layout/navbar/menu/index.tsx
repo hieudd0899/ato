@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { cn } from 'common/utils';
 import { IMenuItem, MenuItem } from './menu-item';
 
 const MENU_ITEMS: IMenuItem[] = [
@@ -34,9 +35,13 @@ const MENU_ITEMS: IMenuItem[] = [
     },
 ];
 
-export const Menu = () => {
+type Props = {
+    className?: string;
+};
+
+export const Menu: React.FC<Props> = ({ className }) => {
     return (
-        <div className="flex flex-1 space-x-4">
+        <div className={cn('flex flex-1 space-x-4', className)}>
             {MENU_ITEMS.map((item) => (
                 <MenuItem data={item} key={item.href} />
             ))}
