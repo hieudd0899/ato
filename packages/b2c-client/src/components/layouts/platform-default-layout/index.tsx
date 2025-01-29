@@ -10,7 +10,9 @@ type Props = React.PropsWithChildren;
 export const PlatformDefaultLayout: React.FC<Props> = ({ children }) => {
     return (
         <div>
-            <Navbar />
+            <React.Suspense fallback={<p>Loading...</p>}>
+                <Navbar />
+            </React.Suspense>
             <section className="pt-20">{children}</section>
         </div>
     );

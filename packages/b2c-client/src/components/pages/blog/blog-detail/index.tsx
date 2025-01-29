@@ -3,6 +3,7 @@
 import React from 'react';
 import { Breadcrumb } from '~/components/common/breadcrumb';
 import { BlogContent } from './blog-content';
+import { RelatedBlog } from './related-blog';
 
 export const BlogDetail = () => {
     return (
@@ -22,9 +23,14 @@ export const BlogDetail = () => {
                     },
                 ]}
             />
-            <div className="grid grid-cols-3">
-                <div className="col-span-2">
+            <div className="grid grid-cols-1 space-y-10 py-4 xl:grid-cols-3 xl:space-x-12 xl:space-y-0">
+                <div className="xl:col-span-2">
                     <BlogContent />
+                </div>
+                <div>
+                    <div className="sticky top-24">
+                        <RelatedBlog />
+                    </div>
                 </div>
             </div>
         </div>
