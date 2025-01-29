@@ -33,7 +33,7 @@ export const RecommendItem: React.FC<Props> = ({ data }) => {
                 />
                 <div className="col-span-2 space-y-1">
                     <h2 className="text-lg font-medium">{data?.title}</h2>
-                    <div className="flex gap-x-4 text-sm font-medium">
+                    <div className="flex flex-col text-sm font-medium lg:flex-row lg:gap-x-4">
                         <p className="flex gap-x-1">
                             <Building2 className="h-4 w-4" />
                             <span>{data?.company}</span>
@@ -45,7 +45,9 @@ export const RecommendItem: React.FC<Props> = ({ data }) => {
                             </span>
                         </p>
                     </div>
-                    <p className="line-clamp-3 text-sm">{data?.briefInfo}</p>
+                    <p className="line-clamp-2 text-sm lg:line-clamp-3">
+                        {data?.briefInfo}
+                    </p>
                 </div>
             </div>
         </Link>
