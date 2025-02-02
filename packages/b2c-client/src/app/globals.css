@@ -1,9 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import 'tailwindcss-animated';
 
 @layer {
     html {
-        @apply text-slate-600;
+        @apply text-slate-700;
     }
 }
