@@ -1,7 +1,8 @@
 'use client';
 
-import dynamic from 'next/dynamic';
 import React, { Suspense } from 'react';
+
+import dynamic from 'next/dynamic';
 
 const QuillEditor = dynamic(() => import('./quill-editor'), { ssr: false });
 

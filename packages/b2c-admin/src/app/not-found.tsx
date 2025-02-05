@@ -1,6 +1,7 @@
+import React from 'react';
+
 import { Button } from 'antd';
 import Link from 'next/link';
-import React from 'react';
 
 const NotFoundPage = () => {
     return (

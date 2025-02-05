@@ -1,8 +1,9 @@
 'use client';
 
+import React from 'react';
+
 import { RichTextContent } from 'common/components/rich-text-content';
 import { Building2, Calendar } from 'lucide-react';
-import React from 'react';
 
 const RICHTEXT_DATA = `<div>
                 <p>

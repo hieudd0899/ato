@@ -1,9 +1,10 @@
 'use client';
 
 import React from 'react';
+
 import { MobileMenu } from './mobile-menu';
-import { UserAuth } from '../user-auth';
 import { Logo } from '../logo';
+import { UserAuth } from '../user-auth';
 
 export const MobileNavbar = () => {
     return (

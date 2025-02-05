@@ -1,9 +1,10 @@
 'use client';
 
 import type React from 'react';
-import { QueryProvider } from './query-provider';
+
 import { AntdConfigProvider } from './antd-config-provider';
 import { AntdRegistryProvider } from './antd-registry-provider';
+import { QueryProvider } from './query-provider';
 
 type Props = React.PropsWithChildren;
 

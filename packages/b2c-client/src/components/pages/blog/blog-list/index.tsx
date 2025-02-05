@@ -1,7 +1,9 @@
 'use client';
 
-import { List } from 'antd';
 import React from 'react';
+
+import { List } from 'antd';
+
 import { BlogItem } from './blog-item';
 
 export const BlogList = () => {

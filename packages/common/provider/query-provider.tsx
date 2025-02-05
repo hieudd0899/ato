@@ -1,11 +1,12 @@
 'use client';
 
+import React from 'react';
+
 import {
     isServer,
     QueryClient,
     QueryClientProvider,
 } from '@tanstack/react-query';
-import React from 'react';
 
 type Props = React.PropsWithChildren;
 

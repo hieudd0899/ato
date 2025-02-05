@@ -1,11 +1,13 @@
 'use client';
 
 import React from 'react';
+
 import { isMobile } from 'react-device-detect';
+
 import { Logo } from './logo';
 import { Menu } from './menu';
-import { UserAuth } from './user-auth';
 import { MobileNavbar } from './mobile-navbar';
+import { UserAuth } from './user-auth';
 
 const Navbar = () => {
     if (isMobile) {

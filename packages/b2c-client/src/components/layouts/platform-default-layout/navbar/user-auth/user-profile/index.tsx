@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+
 import { ShoppingCart } from './shopping-cart';
 import { UserMenu } from './user-menu';
 

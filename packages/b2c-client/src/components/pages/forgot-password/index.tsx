@@ -1,7 +1,9 @@
 'use client';
 
 import React, { Suspense } from 'react';
+
 import { ClientSuspense } from 'common/components/client-suspense';
+
 import { ForgotPasswordForm } from './forgot-password-form';
 import { STEP, useForgetPassword } from '~/store/use-forgot-password';
 

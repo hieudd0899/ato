@@ -1,7 +1,9 @@
 'use client';
 
-import { Button, Modal } from 'antd';
 import React from 'react';
+
+import { Button, Modal } from 'antd';
+
 import { useRegisterModal } from '~/store/use-register-modal';
 
 export const RegisterModal = () => {

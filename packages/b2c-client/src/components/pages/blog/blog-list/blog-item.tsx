@@ -1,11 +1,12 @@
 'use client';
 
+import React from 'react';
+
 import { cn } from 'common/utils';
 import dayjs from 'dayjs';
 import { Building2, Calendar } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
 
 type Props = {
     id: number;

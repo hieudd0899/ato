@@ -1,9 +1,10 @@
 'use client';
 
-import Link from 'next/link';
 import React from 'react';
-import { Nunito } from 'next/font/google';
+
 import { cn } from 'common/utils';
+import { Nunito } from 'next/font/google';
+import Link from 'next/link';
 
 const nunito = Nunito({
     subsets: ['latin'],

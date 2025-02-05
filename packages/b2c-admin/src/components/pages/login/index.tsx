@@ -1,8 +1,10 @@
 'use client';
 
+import React from 'react';
+
 import { useMutation } from '@tanstack/react-query';
 import { Button, Form, FormProps, Input } from 'antd';
-import React from 'react';
+
 import { loginAction, LoginFormType } from '~/actions/auth/login';
 
 export const Login = () => {
