@@ -1,10 +1,11 @@
 'use client';
 
+import React from 'react';
+
 import { UserOutlined } from '@ant-design/icons';
 import { Avatar, Dropdown, MenuProps } from 'antd';
 import { LogOutIcon, ShoppingBagIcon, User } from 'lucide-react';
 import Link from 'next/link';
-import React from 'react';
 
 const items: MenuProps['items'] = [
     {

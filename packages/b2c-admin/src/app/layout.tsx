@@ -1,7 +1,7 @@
-import { Toaster } from 'sonner';
 import { Provider } from 'common/provider';
-import { Metadata } from 'next';
 import { PRIMARY_FONT } from 'common/utils/font';
+import { Metadata } from 'next';
+import { Toaster } from 'sonner';
 import './globals.css';
 
 export const metadata: Metadata = {

@@ -1,11 +1,13 @@
 'use client';
 
 import React, { useMemo } from 'react';
+
 import Link from 'next/link';
+
 import { OTPForm } from './otp-form';
+import { ResetPasswordForm } from './reset-password-form';
 import { SendEmailForm } from './send-email-form';
 import { STEP, useForgetPassword } from '~/store/use-forgot-password';
-import { ResetPasswordForm } from './reset-password-form';
 
 export const ForgotPasswordForm = () => {
     const { step } = useForgetPassword();

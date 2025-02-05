@@ -1,9 +1,11 @@
 'use client';
 
-import { Button, Modal } from 'antd';
 import React from 'react';
-import { useLoginModal } from '~/store/use-login-modal';
+
+import { Button, Modal } from 'antd';
+
 import { LoginForm } from './login-form';
+import { useLoginModal } from '~/store/use-login-modal';
 
 export const LoginModal = () => {
     const { isOpen, onOpen, onClose } = useLoginModal();

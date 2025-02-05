@@ -1,9 +1,9 @@
+import { Provider } from 'common/provider';
+import { PRIMARY_FONT } from 'common/utils/font';
 import type { Metadata } from 'next';
 import { Toaster } from 'sonner';
-import { Provider } from 'common/provider';
 
 import './globals.css';
-import { PRIMARY_FONT } from 'common/utils/font';
 
 export const metadata: Metadata = {
     title: 'Create Next App',

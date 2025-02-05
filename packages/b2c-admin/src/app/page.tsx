@@ -1,7 +1,7 @@
 'use client';
 
 import React, { Suspense, useState } from 'react';
-import { Test } from 'common/components/test';
+
 import {
     Button,
     Checkbox,
@@ -15,9 +15,9 @@ import {
     Switch,
     Tabs,
 } from 'antd';
-
-import { RichTextEditor } from 'common/components/rich-text-editor';
 import { RichTextContent } from 'common/components/rich-text-content';
+import { RichTextEditor } from 'common/components/rich-text-editor';
+import { Test } from 'common/components/test';
 
 import { FilterContainer } from '~/components/common/filter-container';
 import { Table } from '~/components/common/table';

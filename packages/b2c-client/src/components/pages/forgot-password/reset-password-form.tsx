@@ -1,8 +1,9 @@
 'use client';
 
+import React from 'react';
+
 import { Button, Form, FormProps, Input } from 'antd';
 import { useRouter } from 'next/navigation';
-import React from 'react';
 
 type ResetPasswordFormType = {
     newPassword: string;

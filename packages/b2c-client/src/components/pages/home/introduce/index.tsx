@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+
 import { Information } from './information';
 import { IntroThumb } from './intro-thumb';
 

@@ -1,9 +1,11 @@
 'use client';
 
+import React from 'react';
+
 import { ArrowRightOutlined } from '@ant-design/icons';
 import { Button } from 'antd';
 import Link from 'next/link';
-import React from 'react';
+
 import { Animated } from '~/components/common/animated';
 
 export const Information = () => {

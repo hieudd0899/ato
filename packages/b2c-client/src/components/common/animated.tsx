@@ -1,7 +1,8 @@
 'use client';
 
-import { cn } from 'common/utils';
 import React from 'react';
+
+import { cn } from 'common/utils';
 import { useInView } from 'react-intersection-observer';
 
 type Props = React.PropsWithChildren & {

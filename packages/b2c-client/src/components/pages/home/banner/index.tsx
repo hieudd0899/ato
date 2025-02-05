@@ -1,10 +1,12 @@
 'use client';
 
+import React from 'react';
+
 import { ArrowRightOutlined } from '@ant-design/icons';
 import { Button } from 'antd';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+
 import { Animated } from '~/components/common/animated';
 
 export const Banner = () => {

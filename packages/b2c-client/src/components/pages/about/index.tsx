@@ -1,9 +1,10 @@
 'use client';
 
 import React from 'react';
+
 import { Banner } from './banner';
-import { Breadcrumb } from '~/components/common/breadcrumb';
 import { Content } from './content';
+import { Breadcrumb } from '~/components/common/breadcrumb';
 import { RecommendBar } from '~/components/common/recommend-bar';
 
 const RICHTEXT_DATA = `<div>

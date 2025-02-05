@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+
 import { IRecommendItem, RecommendItem } from './recommend-item';
 
 type Props = {

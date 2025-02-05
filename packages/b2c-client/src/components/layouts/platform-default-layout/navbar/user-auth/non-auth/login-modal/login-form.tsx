@@ -1,8 +1,10 @@
 'use client';
 
+import React from 'react';
+
 import { Button, Checkbox, Form, FormProps, Input } from 'antd';
 import Link from 'next/link';
-import React from 'react';
+
 import { LoginFormType } from '~/actions/auth/login';
 import { useLoginModal } from '~/store/use-login-modal';
 import { useRegisterModal } from '~/store/use-register-modal';

@@ -1,7 +1,9 @@
 'use client';
 
-import { Button, Form, FormProps, Input } from 'antd';
 import React from 'react';
+
+import { Button, Form, FormProps, Input } from 'antd';
+
 import { STEP, useForgetPassword } from '~/store/use-forgot-password';
 
 type OTPFormType = {

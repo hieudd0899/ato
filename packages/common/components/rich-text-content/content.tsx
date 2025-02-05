@@ -1,7 +1,9 @@
 'use client';
 
 import React from 'react';
+
 import DOMPurify from 'dompurify';
+
 import styles from './content.module.scss';
 
 type Props = {

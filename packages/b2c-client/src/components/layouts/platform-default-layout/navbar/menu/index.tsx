@@ -1,7 +1,9 @@
 'use client';
 
 import React from 'react';
+
 import { cn } from 'common/utils';
+
 import { IMenuItem, MenuItem } from './menu-item';
 
 const MENU_ITEMS: IMenuItem[] = [

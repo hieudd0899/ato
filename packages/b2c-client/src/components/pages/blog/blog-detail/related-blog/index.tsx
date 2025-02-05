@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+
 import { RecommendBar } from '~/components/common/recommend-bar';
 
 export const RelatedBlog = () => {

@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+
 import { RichTextContent } from 'common/components/rich-text-content';
 
 type Props = {

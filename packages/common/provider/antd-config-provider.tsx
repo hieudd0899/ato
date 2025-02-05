@@ -1,9 +1,11 @@
 'use client';
 
-import { ConfigProvider } from 'antd';
 import React from 'react';
+
 import { LoadingOutlined } from '@ant-design/icons';
+import { ConfigProvider } from 'antd';
 import vi from 'antd/locale/vi_VN';
+
 import { PRIMARY_COLOR } from '../constants/colors';
 import 'dayjs/locale/vi';
 import { PRIMARY_FONT } from '../utils/font';

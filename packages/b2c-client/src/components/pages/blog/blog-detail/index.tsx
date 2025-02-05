@@ -1,9 +1,10 @@
 'use client';
 
 import React from 'react';
-import { Breadcrumb } from '~/components/common/breadcrumb';
+
 import { BlogContent } from './blog-content';
 import { RelatedBlog } from './related-blog';
+import { Breadcrumb } from '~/components/common/breadcrumb';
 
 export const BlogDetail = () => {
     return (

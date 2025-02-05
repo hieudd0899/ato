@@ -1,10 +1,10 @@
 'use client';
 
+import React from 'react';
+
 import { ShoppingCartOutlined } from '@ant-design/icons';
 import { Badge, Button, Popover } from 'antd';
-
 import Link from 'next/link';
-import React from 'react';
 
 export const ShoppingCart = () => {
     const content: React.ReactNode = (
