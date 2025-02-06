@@ -48,7 +48,7 @@ export const Animated: React.FC<Props> = ({
         <Comp
             className={cn(
                 'animate-duration-1000 animate-delay-200',
-                animated,
+                isInViewed && animated,
                 isInViewed ? 'animate-ease-out' : 'opacity-0',
                 isInViewed && className && className
             )}
