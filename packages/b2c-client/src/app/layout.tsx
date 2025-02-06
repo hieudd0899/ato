@@ -1,4 +1,5 @@
 import { Provider } from 'common/provider';
+import { ProgressBarProviders } from 'common/provider/progress-bar-provider';
 import { PRIMARY_FONT } from 'common/utils/font';
 import type { Metadata } from 'next';
 import { Toaster } from 'sonner';
@@ -19,8 +20,10 @@ export default function RootLayout({
         <Provider>
             <html lang="en">
                 <body className={PRIMARY_FONT.className}>
-                    {children}
-                    <Toaster />
+                    <ProgressBarProviders>
+                        {children}
+                        <Toaster />
+                    </ProgressBarProviders>
                 </body>
             </html>
         </Provider>
