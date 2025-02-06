@@ -14,9 +14,9 @@ export const Banner = () => {
                 src="/images/backgrounds/about-us.png"
                 width={1920}
             />
-            <div className="bg-primary relative h-full w-full bg-opacity-35">
+            <div className="relative h-full w-full bg-green-600 bg-opacity-35">
                 <div className="container flex h-full items-center">
-                    <p className="text-5xl font-extrabold text-white">
+                    <p className="text-5xl font-extrabold text-white drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)]">
                         Về chúng tôi
                     </p>
                 </div>

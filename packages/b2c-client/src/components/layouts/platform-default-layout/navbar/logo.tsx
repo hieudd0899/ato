@@ -8,7 +8,7 @@ import Link from 'next/link';
 
 const nunito = Nunito({
     subsets: ['latin'],
-    weight: ['700'],
+    weight: ['800'],
     display: 'swap',
     adjustFontFallback: false,
 });
@@ -18,7 +18,7 @@ export const Logo = () => {
         <Link
             className={cn(
                 nunito.className,
-                'text-primary cursor-pointer text-3xl font-bold'
+                'text-primary cursor-pointer text-3xl font-extrabold'
             )}
             href="/"
         >

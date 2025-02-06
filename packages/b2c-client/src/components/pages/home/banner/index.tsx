@@ -3,10 +3,10 @@
 import React from 'react';
 
 import { ArrowRightOutlined } from '@ant-design/icons';
-import { Button } from 'antd';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { AnimateButton } from '~/components/common/animate-button';
 import { Animated } from '~/components/common/animated';
 
 export const Banner = () => {
@@ -21,7 +21,7 @@ export const Banner = () => {
             />
             <div className="relative flex h-full w-full flex-col items-center justify-center space-y-6 bg-green-600 bg-opacity-20">
                 <Animated
-                    className="space-y-5 text-center text-white"
+                    className="space-y-5 text-center text-white drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)]"
                     type="fade-up"
                 >
                     <p className="text-4xl font-bold">
@@ -35,15 +35,12 @@ export const Banner = () => {
                 </Animated>
                 <Animated className="animate-delay-300" type="fade-down">
                     <Link href="/">
-                        <Button
-                            icon={<ArrowRightOutlined />}
-                            iconPosition="end"
-                            shape="round"
-                            size="large"
-                            type="primary"
+                        <AnimateButton
+                            className="border-neutral-900 bg-white text-neutral-900 transition hover:bg-neutral-900 hover:text-white"
+                            icon={<span>✈️</span>}
                         >
-                            Khám phá
-                        </Button>
+                            Khám phá <ArrowRightOutlined />
+                        </AnimateButton>
                     </Link>
                 </Animated>
             </div>

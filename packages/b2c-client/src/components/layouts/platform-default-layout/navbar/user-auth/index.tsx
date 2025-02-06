@@ -5,7 +5,7 @@ import React from 'react';
 import { NonAuth } from './non-auth';
 import { UserProfile } from './user-profile';
 
-const AUTH = true;
+const AUTH = false;
 
 export const UserAuth = () => {
     if (!AUTH) {

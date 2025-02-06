@@ -20,7 +20,9 @@ export const Breadcrumb: React.FC<Props> = ({ items }) => {
                 !item?.href
             ) {
                 return {
-                    title: <span className="text-primary">{item.title}</span>,
+                    title: (
+                        <span className="text-neutral-900">{item.title}</span>
+                    ),
                 };
             }
             return {

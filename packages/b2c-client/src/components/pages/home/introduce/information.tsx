@@ -7,12 +7,14 @@ import { Button } from 'antd';
 import Link from 'next/link';
 
 import { Animated } from '~/components/common/animated';
+import { FlipWords } from '~/components/common/flip-words';
 
 export const Information = () => {
+    const words = ['bền vững', 'tương lai'];
     return (
         <Animated className="space-y-7" type="fade-right">
             <h2 className="text-5xl font-bold">
-                Du lịch bền vững, Du lịch tương lai
+                Du lịch <FlipWords words={words} />
             </h2>
             <p>
                 Du lịch nông thôn (Rural Tourism) được hiểu là loại hình du lịch

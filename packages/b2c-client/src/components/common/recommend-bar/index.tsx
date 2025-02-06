@@ -12,7 +12,7 @@ type Props = {
 export const RecommendBar: React.FC<Props> = ({ title, items }) => {
     return (
         <div className="space-y-3">
-            <p className="text-primary border-b-primary border-b-2 text-lg font-bold uppercase">
+            <p className="border-b-2 border-b-neutral-900 text-lg font-bold uppercase text-neutral-900">
                 {title}
             </p>
             <div className="space-x-2">

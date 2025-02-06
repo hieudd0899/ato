@@ -12,7 +12,12 @@ export const LoginModal = () => {
 
     return (
         <>
-            <Button onClick={onOpen} shape="round" size="large" type="primary">
+            <Button
+                color="default"
+                onClick={onOpen}
+                type="primary"
+                variant="solid"
+            >
                 Đăng nhập
             </Button>
             <Modal centered footer={null} onCancel={onClose} open={isOpen}>

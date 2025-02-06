@@ -5,6 +5,7 @@ import React, { useMemo } from 'react';
 import { cn } from 'common/utils';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { isDesktop } from 'react-device-detect';
 
 export interface IMenuItem {
     label: string;
@@ -36,8 +37,10 @@ export const MenuItem: React.FC<Props> = ({ data }) => {
         <Link
             className={cn(
                 'font-medium text-slate-600 transition-colors',
-                'hover:text-primary',
-                isActive && 'text-primary'
+                isDesktop && 'hover:text-neutral-900',
+                isActive &&
+                    'border-b-2 border-neutral-900 font-semibold text-neutral-900',
+                isActive && !isDesktop && 'border-none'
             )}
             href={data.href}
         >

@@ -29,13 +29,15 @@ export const BlogItem: React.FC<Props> = ({ id }) => {
                     width={1920}
                 />
                 <div className="p-4">
-                    <h2 className="text-lg font-semibold">Du lịch sinh thái</h2>
-                    <div className="flex items-center space-x-4">
-                        <p className="flex items-center space-x-1">
+                    <h2 className="text-lg font-bold text-slate-900">
+                        Du lịch sinh thái
+                    </h2>
+                    <div className="flex items-center space-x-4 font-semibold">
+                        <p className="flex items-end space-x-1">
                             <Building2 className="h4 w-4" />
                             <span>ABC Tourism</span>
                         </p>
-                        <p className="flex items-center space-x-1">
+                        <p className="flex items-end space-x-1">
                             <Calendar className="h4 w-4" />
                             <span>{dayjs().format('DD-MM-YYYY hh:mm')}</span>
                         </p>

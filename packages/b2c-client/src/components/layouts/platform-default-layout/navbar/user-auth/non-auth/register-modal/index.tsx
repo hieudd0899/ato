@@ -11,7 +11,7 @@ export const RegisterModal = () => {
 
     return (
         <>
-            <Button onClick={onOpen} shape="round" size="large" type="text">
+            <Button onClick={onOpen} shape="round" type="text">
                 Đăng ký
             </Button>
             <Modal centered footer={null} onCancel={onClose} open={isOpen}>
